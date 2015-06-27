@@ -1,0 +1,14 @@
+language: java
+jdk:
+- oraclejdk7
+branches:
+  only:
+  - master
+before_install:
+- wget https://gist.githubusercontent.com/Nunnery/2716c87ed5657884fcc2/raw/0065199c4d104bad6099a4b5cd18128b3396a243/settings.xml
+  -P target/maven/
+script: mvn clean deploy --settings target/maven/settings.xml
+env:
+  global:
+  - secure: N5mo3WwnQ1kGpOeZY2DV+8ORLuCOOgqibidSCQAoyOTUhKMVAwD+2Jg5SWCztKAlPBVVl6rnCqaAR2EOhUgdqLdqlTXfeG/kHXsfA5Tjqum15ynaDWKWC8I1uyYtGsz3YPz8dbSpHSmUrWvVzhCAP8bmZn0QEPkAHIBfZgx9E6A=
+  - secure: fGhBzsby0/wv5eIF4xpAH4t9T2UTUrKHywMjzYd19aoPpuWFx2RB3hrwZf1Or3FuhwQEOhQ5aCvzrzt1n9FPU8EkJ4dZiKGorIlxSYxc3ucchvC/zXyt/u8mGnJ8Te1XKhmN+stQM5vdI6+jRS2h5Rea2KVSPfhJeaqq4ofXysQ=
