@@ -56,7 +56,7 @@
         <repository>
             <id>tealcube-repo</id>
             <name>Teal Cube Public Repository</name>
-            <url>https://maven.tealcube.com/artifactory/public</url>
+            <url>http://maven.tealcube.com/artifactory/public</url>
         </repository>
     </repositories>
 
