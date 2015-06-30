@@ -3,5 +3,7 @@ jdk:
 - oraclejdk7
 branches:
   only:
-  - master
-script: gradle clean uploadArchives
+    - master
+before_install:
+- wget https://gist.githubusercontent.com/Nunnery/2716c87ed5657884fcc2/raw/0065199c4d104bad6099a4b5cd18128b3396a243/settings.xml -P target/maven/
+script: mvn clean deploy --settings target/maven/settings.xml
