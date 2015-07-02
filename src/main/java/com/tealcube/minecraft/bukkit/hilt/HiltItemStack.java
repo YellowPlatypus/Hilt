@@ -23,7 +23,7 @@
 package com.tealcube.minecraft.bukkit.hilt;
 
 import com.google.common.base.Joiner;
-import org.apache.commons.lang.WordUtils;
+import org.apache.commons.lang3.text.WordUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
