@@ -197,4 +197,10 @@ public class HiltItemStack extends ItemStack {
         return this;
     }
 
+    @Override
+    public HiltItemStack clone() {
+        HiltItemStack hiltItemStack = new HiltItemStack(getType(), getAmount(), getDurability());
+        hiltItemStack.setItemMeta(getItemMeta().clone());
+        return hiltItemStack;
+    }
 }
