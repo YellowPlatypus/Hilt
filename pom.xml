@@ -104,7 +104,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>org.apache</pattern>
-                                    <shadedPattern>com.tealcube.minecraft.bukkit.fanciful.shade.apache</shadedPattern>
+                                    <shadedPattern>com.tealcube.minecraft.bukkit.hilt.shade.apache</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
