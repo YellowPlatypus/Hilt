@@ -14,50 +14,50 @@
  */
 package com.tealcube.minecraft.bukkit.hilt;
 
-import org.bukkit.FireworkEffect;
+import org.bukkit.DyeColor;
 import org.bukkit.Material;
-import org.bukkit.inventory.meta.FireworkMeta;
+import org.bukkit.block.banner.Pattern;
+import org.bukkit.inventory.meta.BannerMeta;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
-public class HiltFirework extends HiltItemStack {
+public class HiltBanner extends HiltItemStack {
 
-    public HiltFirework(Collection<FireworkEffect> fireworkEffects, int power) {
-        super(Material.FIREWORK);
-        setFireworkEffects(fireworkEffects);
-        setPower(power);
+    public HiltBanner(Collection<Pattern> patterns, DyeColor color) {
+        super(Material.BANNER);
+        setPatterns(patterns);
+        setColor(color);
     }
 
-    public int getPower() {
+    public Collection<Pattern> getPatterns() {
         createItemMeta();
-        if (getItemMeta() instanceof FireworkMeta) {
-            return ((FireworkMeta) getItemMeta()).getPower();
-        }
-        return 0;
-    }
-
-    public HiltFirework setPower(int power) {
-        createItemMeta();
-        if (getItemMeta() instanceof FireworkMeta) {
-            ((FireworkMeta) getItemMeta()).setPower(power);
-        }
-        return this;
-    }
-
-    public List<FireworkEffect> getFireworkEffects() {
-        createItemMeta();
-        if (getItemMeta() instanceof FireworkMeta && ((FireworkMeta) getItemMeta()).hasEffects()) {
-            return new ArrayList<>(((FireworkMeta) getItemMeta()).getEffects());
+        if (getItemMeta() instanceof BannerMeta) {
+            return ((BannerMeta) getItemMeta()).getPatterns();
         }
         return new ArrayList<>();
     }
 
-    public HiltFirework setFireworkEffects(Collection<FireworkEffect> effects) {
+    public HiltBanner setPatterns(Collection<Pattern> patterns) {
         createItemMeta();
-        if (getItemMeta() instanceof FireworkMeta) {
-            ((FireworkMeta) getItemMeta()).addEffects(effects);
+        if (getItemMeta() instanceof BannerMeta) {
+            ((BannerMeta) getItemMeta()).setPatterns(new ArrayList<>(patterns));
+        }
+        return this;
+    }
+
+    public DyeColor getColor() {
+        createItemMeta();
+        if (getItemMeta() instanceof BannerMeta) {
+            return ((BannerMeta) getItemMeta()).getBaseColor();
+        }
+        return null;
+    }
+
+    public HiltBanner setColor(DyeColor color) {
+        createItemMeta();
+        if (getItemMeta() instanceof BannerMeta) {
+            ((BannerMeta) getItemMeta()).setBaseColor(color);
         }
         return this;
     }

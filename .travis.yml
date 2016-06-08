@@ -1,0 +1,12 @@
+language: java
+jdk:
+- oraclejdk7
+script:
+- wget https://gist.githubusercontent.com/Nunnery/2716c87ed5657884fcc2/raw/2d7dcc0328a68eb624cdc13475834d179c24d255/settings.xml
+- mvn clean deploy --settings settings.xml
+env:
+  global:
+    secure: LLkgGZ+7R4h+o14l/nJ5Ze0hpzoJMruWGvKm5bs8y1YLNEAHthm7v2YomUD9oHGfJU/c2+L+sk1Ft/7WGqycN1tvaHIMpgzKjQxdqy9lcreThdkGncqW3BVGY0GE3pONI6qJgUoqzbJdJtCwqw4YZafCiUEuQK50GVp0jR0KqHk=
+notifications:
+  slack:
+    secure: XbZikVvJBV8+JB2gC6+n+6IU5qxu7puAO2QsL7mW5S2jdflGVJ+GvNwbbgkK7D5GTWZ4InSI2rjMGuB0233FLRNHIc9NzyiMH5nO2G60HlSAh8pahXKhoNZz2DgUX7EGQz7QYtbEnUOWagRmBb5Q+WX2Qz8ndan3XBfytplNiNA=
