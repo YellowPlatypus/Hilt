@@ -38,6 +38,14 @@ public class HiltFirework extends HiltItemStack {
         setPower(power);
     }
 
+    public int getPower() {
+        createItemMeta();
+        if (getItemMeta() instanceof FireworkMeta) {
+            return ((FireworkMeta) getItemMeta()).getPower();
+        }
+        return 0;
+    }
+
     public HiltFirework setPower(int power) {
         createItemMeta();
         if (getItemMeta() instanceof FireworkMeta) {
